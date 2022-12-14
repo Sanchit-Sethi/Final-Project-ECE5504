@@ -1,0 +1,11 @@
+#=======================================================================
+# Makefrag for kernel tests
+#-----------------------------------------------------------------------
+
+kernel_sc_tests = \
+	dokernel \
+
+kernel_p_tests = $(addprefix kernel-p-, $(kernel_sc_tests))
+kernel_v_tests = $(addprefix kernel-v-, $(kernel_sc_tests))
+
+spike_tests += $(kernel_p_tests) $(kernel_v_tests)
